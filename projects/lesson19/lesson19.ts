@@ -11,4 +11,4 @@ function addNumberOrString(a: ericType, b: number | string) {
 
 //loi khi running
 //loi khi compile
-console.log(">>> check: ", addNumberOrString('eric ', "Hoi dan it"))
+console.log(">>> check: ", addNumberOrString('eric ', "HBT it"))

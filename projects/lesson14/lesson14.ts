@@ -1,6 +1,6 @@
 enum API_STATUS {
     PENDDING,
-    FULFILLED = "FULFILLED asfdasfasf",
+    FULFILLED = "FULFILLED 123",
     REJECTED = "FULFILLED" //PROMISE
 }
 
