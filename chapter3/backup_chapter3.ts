@@ -6,7 +6,7 @@ interface IEmployee {
     getSalary: (empCode1: number) => number;
 }
 
-class Eric implements IEmployee {
+class HBT implements IEmployee {
     public empCode: number;
     public name: string;
 
@@ -15,7 +15,7 @@ class Eric implements IEmployee {
     }
 
     getName = () => {
-        return 'hoi dan it'
+        return 'HBT IT'
     }
 }
 
@@ -36,12 +36,12 @@ function getFullName(person: IPerson) {
 }
 
 let person40 = {
-    firstName: 'Eric',
-    lastName: 'Hoi Dan IT',
+    firstName: 'HBT',
+    lastName: 'HBT IT',
     address: 'Ha noi'
 };
 
-console.log(getFullName(person40)); // Eric Hoi Dan IT
+console.log(getFullName(person40)); // HBT HBT IT
 
 
 //lesson 38
@@ -91,14 +91,14 @@ class Employee1 extends Person3 {
     }
     //overwrite
     describe(): string {
-        return `${super.describe()} from parent - describe Hoi Dan IT`;
+        return `${super.describe()} from parent - describe HBT IT`;
     }
 }
 
 // let employee = new Employee('John','Doe','Front-end Developer');
 
 //Employee kết thừa lại person => dùng đc method của parent
-let employee = new Employee1('Hoi Dan IT', 'Eric', 'Web Developer');
+let employee = new Employee1('HBT IT', 'HBT', 'Web Developer');
 
 console.log(employee.getFullName());
 console.log(employee.describe());
@@ -129,7 +129,7 @@ class Person2 {
     }
 }
 
-let person2 = new Person2(25, 'Hoi Dan IT', 'Eric');
+let person2 = new Person2(25, 'HBT IT', 'HBT');
 let checkAge = person2.age; //getter
 
 person2.age = 69 // setter
@@ -190,7 +190,7 @@ class Person {
     }
 }
 
-let hoidanit = new Person("123", "Hoi Dan IT", " Eric");
+let hoidanit = new Person("123", "HBT IT", " HBT");
 console.log(">> check class: ", hoidanit.getFullName())
 
 
@@ -218,11 +218,11 @@ function addNew(a: number, b: number): number;
 
 function addNew(a: string, b: string): string;
 
-function addNew(a: any, b: any) {
+function addNew(a: any, b: any)  {
     return a + b;
 }
 
-// console.log(">>> check add new: ", addNew(6, 9), addNew(" Hoi Dan IT", " & Eric"))
+// console.log(">>> check add new: ", addNew(6, 9), addNew(" HBT IT", " & HBT"))
 
 
 class Counter {
@@ -278,7 +278,7 @@ function Greet(greeting: string, ...names: string[]) {
     return greeting + " " + names.join(", ") + "!";
 }
 
-console.log(Greet("Xin chao", "Eric &", "Hoi dan it")); // returns "Hello Steve, Bill!"
+console.log(Greet("Xin chao", "HBT &", "DEV it")); // returns "Hello Steve, Bill!"
 
 //Greet("Hello");// returns "Hello !"
 
@@ -309,7 +309,7 @@ console.log(">>> check sum 4 = ", sum5(2, 5),
 
 //lesson 28
 
-const sum3 = (x: number, y: number): number => {
+const sum3 = (x: number, y: number) => {
     return x + y;
 }
 
@@ -327,12 +327,16 @@ a = sum3(1, 10) //string
 //     return a + b;
 // }
 
-function sum(a: number, b: number) {
-    return a + b;
+function sum(a: (number | string), b: number){
+    if (typeof a === 'number')
+    {
+        return a + b;
+    }
+
 }
 
 //anonymous function () => {}
-const sum2 = (a: number, b: number) => {
+const sum2 = (a: number, b: number): number => {
     return a + b;
 }
 
@@ -382,18 +386,23 @@ let products = [
     { name: 'laptop', price: 1200 }
 ];
 
-let discount1 = 0;
-let product = products[1];
+let discount1:number = 0;
+let product: {
+    name:string,
+    price:number
+} = products[1];
+
+console.log(product.name)
 switch (product.name) {
     case 'phone':
         discount1 = 5;
         break;
     case 'tablet':
         discount1 = 10;
-    // break;
+        break;
     case 'laptop':
         discount1 = 15;
-    // break;
+        break;
     default:
         discount1 = 100;
 }

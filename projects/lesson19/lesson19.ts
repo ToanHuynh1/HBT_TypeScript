@@ -1,5 +1,5 @@
-type ericType = number | string | object | boolean;
-function addNumberOrString(a: ericType, b: number | string) {
+type ericType = number | string | object | boolean
+function addNumberOrString1(a: ericType, b: number | string) {
     if (typeof a === 'number' && typeof b === 'number') {
         return a + b;
     }
@@ -11,4 +11,4 @@ function addNumberOrString(a: ericType, b: number | string) {
 
 //loi khi running
 //loi khi compile
-console.log(">>> check: ", addNumberOrString('eric ', "HBT it"))
+console.log(">>> check: ", addNumberOrString1('HBT ', "HBT it"))

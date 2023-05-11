@@ -1,4 +1,4 @@
-const nameTS1 = 'ToanHB';
+const nameTS1:string= 'ToanHB';
 
 console.log('length = ', nameTS1.length)
 
